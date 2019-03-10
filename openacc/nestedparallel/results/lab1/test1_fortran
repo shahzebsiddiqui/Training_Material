@@ -1,0 +1,23 @@
+Matrix Vector Multiplication of [20000,20000] X [20000]
+Execution Time:  0.788 seconds 
+ MFLOPS/sec:     507.5325    
+
+Accelerator Kernel Timing data
+/home/sms1990/nestedparallel/lab1/.solution/nestedparallel.f90
+  nestedparallel  NVIDIA  devicenum=0
+    time(us): 182,552
+    51: data region reached 1 time
+        51: data copyin transfers: 98
+             device time(us): total=590 max=24 min=4 avg=6
+    52: compute region reached 1 time
+        52: kernel launched 1 time
+            grid: [157]  block: [128]
+             device time(us): total=181,278 max=181,278 min=181,278 avg=181,278
+            elapsed time(us): total=181,338 max=181,338 min=181,338 avg=181,338
+    52: data region reached 2 times
+        52: data copyin transfers: 1
+             device time(us): total=5 max=5 min=5 avg=5
+        56: data copyout transfers: 1
+             device time(us): total=20 max=20 min=20 avg=20
+        57: data copyout transfers: 98
+             device time(us): total=659 max=10 min=5 avg=6

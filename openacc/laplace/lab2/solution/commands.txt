@@ -1,0 +1,6 @@
+make 						: Compile binaries in Makefile
+make clean                                	: Removes binaries generated from Makefile
+nvprof ./laplace2d_acc				: Profile binary using nvprof
+export PGI_ACC_TIME=1				: Compiler generate timing report for each gpu kernel, along with kernel configuration details
+sbatch acc.sh					: Submit GPU job script
+

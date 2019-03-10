@@ -1,0 +1,4 @@
+#!/bin/bash 
+#BSUB -W 00:10 
+#BSUB -N 2 
+uptime

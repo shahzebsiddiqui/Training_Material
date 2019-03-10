@@ -1,0 +1,70 @@
+==52081== NVPROF is profiling process 52081, command: ./nestedpar_F
+
+Accelerator Kernel Timing data
+/home/sms1990/nestedparallel/lab3/.solution/nestedparallel.f90
+  nestedparallel  NVIDIA  devicenum=0
+    time(us): 161
+    49: data region reached 1 time
+    51: data region reached 1 time
+    51: compute region reached 1 time
+        51: kernel launched 1 time
+            grid: [20000]  block: [128]
+            elapsed time(us): total=97 max=97 min=97 avg=97
+    60: compute region reached 1 time
+        60: kernel launched 1 time
+            grid: [512]  block: [192]
+            elapsed time(us): total=101 max=101 min=101 avg=101
+    60: data region reached 2 times
+        60: data copyin transfers: 1
+             device time(us): total=72 max=72 min=72 avg=72
+        65: data copyout transfers: 1
+             device time(us): total=62 max=62 min=62 avg=62
+    65: data region reached 1 time
+        65: data copyout transfers: 1
+             device time(us): total=27 max=27 min=27 avg=27
+==52081== Profiling application: ./nestedpar_F
+PGI: CUDA Performance Tools Interface (CUPTI) could not be initialized.
+ Please disable all profiling tools (including NVPROF) before using PGI_ACC_TIME.
+Matrix Vector Multiplication of [20000,20000] X [20000]
+Execution Time:  0.085 seconds 
+ MFLOPS/sec:     4689.513    
+==52081== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 63.61%  19.022ms         1  19.022ms  19.022ms  19.022ms  nestedparallel_60_gpu
+ 36.31%  10.857ms         1  10.857ms  10.857ms  10.857ms  nestedparallel_51_gpu
+  0.06%  18.464us         2  9.2320us  3.8080us  14.656us  [CUDA memcpy DtoH]
+  0.02%  5.4080us         1  5.4080us  5.4080us  5.4080us  [CUDA memcpy HtoD]
+
+==52081== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 78.07%  330.32ms         1  330.32ms  330.32ms  330.32ms  cuCtxCreate
+ 12.23%  51.729ms         1  51.729ms  51.729ms  51.729ms  cuMemHostAlloc
+  7.05%  29.838ms         5  5.9677ms  4.0400us  19.001ms  cuStreamSynchronize
+  1.24%  5.2316ms         2  2.6158ms  4.1630us  5.2275ms  cudaEventCreate
+  0.70%  2.9753ms         5  595.06us  11.237us  2.1050ms  cuMemAlloc
+  0.25%  1.0663ms         1  1.0663ms  1.0663ms  1.0663ms  cuMemAllocHost
+  0.21%  888.40us        83  10.703us     840ns  378.58us  cuDeviceGetAttribute
+  0.08%  317.89us         1  317.89us  317.89us  317.89us  cuModuleLoadData
+  0.03%  108.24us         2  54.118us  47.513us  60.723us  cuLaunchKernel
+  0.02%  94.233us         1  94.233us  94.233us  94.233us  cuDeviceGetName
+  0.02%  91.947us         1  91.947us  91.947us  91.947us  cuDeviceTotalMem
+  0.02%  77.770us        12  6.4800us  4.2470us  20.750us  cuEventRecord
+  0.02%  66.179us         7  9.4540us  3.4970us  15.394us  cuEventSynchronize
+  0.01%  50.147us         1  50.147us  50.147us  50.147us  cuStreamCreate
+  0.01%  48.824us         1  48.824us  48.824us  48.824us  cuMemcpyHtoDAsync
+  0.01%  39.277us         2  19.638us  14.393us  24.884us  cuMemcpyDtoHAsync
+  0.01%  35.158us         2  17.579us  12.094us  23.064us  cudaEventRecord
+  0.01%  30.624us         5  6.1240us  5.4870us  7.0270us  cuEventElapsedTime
+  0.01%  24.871us         2  12.435us  2.5440us  22.327us  cudaEventDestroy
+  0.00%  14.543us         4  3.6350us  1.5570us  6.8560us  cuEventCreate
+  0.00%  7.6930us         1  7.6930us  7.6930us  7.6930us  cudaEventElapsedTime
+  0.00%  7.2010us         3  2.4000us  1.2000us  4.5870us  cuDeviceGetCount
+  0.00%  5.9330us         2  2.9660us  2.1530us  3.7800us  cuDriverGetVersion
+  0.00%  5.7600us         1  5.7600us  5.7600us  5.7600us  cudaEventSynchronize
+  0.00%  5.3800us         1  5.3800us  5.3800us  5.3800us  cuInit
+  0.00%  4.1200us         3  1.3730us  1.1830us  1.5900us  cuDeviceGet
+  0.00%  3.9200us         2  1.9600us  1.0460us  2.8740us  cuModuleGetFunction
+  0.00%  3.0710us         2  1.5350us  1.1270us  1.9440us  cuCtxGetCurrent
+  0.00%  1.9670us         1  1.9670us  1.9670us  1.9670us  cuCtxSetCurrent
+  0.00%  1.3030us         1  1.3030us  1.3030us  1.3030us  cuCtxAttach
+  0.00%  1.2540us         1  1.2540us  1.2540us  1.2540us  cuDeviceComputeCapability

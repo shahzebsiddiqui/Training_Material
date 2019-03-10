@@ -1,0 +1,17 @@
+Application: Porting Matvec routine to GPU using OpenACC
+
+Problem:     Matrix Vector Multiplication is a common routine used in
+	     many applications for solving a particular problem. Matrix-
+	     Vector multiplication is an excellent application that can
+	     be parallelized easily and achieve better performance with 
+	     more powerful hardware. We will explore performance of MatVec
+	     routine on GPU using OpenACC directives and see its performance.
+
+Description: In this exercise you will learn how to port a function/subroutine 
+	     to GPUs using the OpenACC routine directive. Next we will learn 
+	     how to tune the compute kernel using the gang vector clauses. 
+	     Finally we will focus on accelerating the application to achieve
+             the best performance by running the entire code on GPU.
+ 
+	     We will be using the PGI 15.4 compiler for compiling OpenACC code 
+	     and use the CUDA toolkit for profiling code via nvprof. 

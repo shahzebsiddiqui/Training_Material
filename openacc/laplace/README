@@ -1,0 +1,52 @@
+Application: Accelerating Jacobi solver using OpenACC 
+
+Problem:     Jacobi iteration is a standard iterative method for solving System
+             of Linear Equations (SLE). The jacobi method is iterated many
+             times until the error threshold is satisfied which will give an
+             approximate solution to the SLE.
+
+Description: In this exercise you will be learning how to accelerate your CPU 
+	     based code using OpenACC and compare it with OpenMP version. For 
+	     our experiment we will be using NVIDIA GPUs with PGI compiler 
+	     15.4. OpenACC directives are very similar to OpenMP with respect 
+	     to syntax. In this exercise you will learn how to launch a task 
+	     on GPU, control data movement, and tune kernel parameters using
+	     gangs & vectors.
+
+
+Lab 1:       Add the OpenACC compute construct in the Jacobi Iteration. First 
+	     run the OpenMP code laplace2d_omp	with different number of 
+	     threads to get an idea of how application performs with varying
+	     thread values. To change the number of threads for OpenMP set
+	     the OMP_NUM_THREADS environment variable.
+
+ 	     export OMP_NUM_THREADS=4
+
+	     Run your test case with threads = 1,2,4,8,16. 
+
+	     Next run your OpenACC binary laplace2d_acc and compare its 
+	     performance with OpenMP version.
+
+	     Hint:(You dont need to remove the OpenMP directives since PGI 
+	     compiler will create two binaries from one source code). 
+
+Lab 2:       Initialize the GPU prior to computation and minimize data-movement
+	     for the Jacobi Iteration.
+
+	     Run your application and pay special attention to compiler message
+	     about data movement. If you have accelerated your code properly,
+	     you should have reduced the data transfer between CPU-GPU from the
+	     previous version.
+
+Lab 3:       Tune the compute construct by specifying values for gang and 
+	     vector. Try different parameters for both gang and vector value 
+	     until you can accelerate your code. 
+
+	     Hint:(Keep your vector values multiple of 16 and tune one parameter 
+	     at a time. See what values compiler puts for gang/vector values and
+	     tune accordingly).
+		
+             You can use nvprof utility to profile code and see what section of 
+	     code is most compute intensive and tune that particular region.
+
+

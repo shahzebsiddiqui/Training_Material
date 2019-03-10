@@ -1,0 +1,36 @@
+Jacobi relaxation Calculation: 4096 x 4096 mesh
+    0  0.250000
+  100  0.002397
+  200  0.001204
+  300  0.000804
+  400  0.000603
+  500  0.000483
+  600  0.000402
+  700  0.000345
+  800  0.000302
+  900  0.000269
+ completed in      3.471 seconds
+
+Accelerator Kernel Timing data
+/home/sms1990/laplace/lab3/.solution/laplace2d.f90
+  laplace  NVIDIA  devicenum=0
+    time(us): 3,258,318
+    63: data region reached 1 time
+        63: data copyin transfers: 4
+             device time(us): total=89 max=45 min=14 avg=22
+        93: data copyout transfers: 5
+             device time(us): total=43 max=11 min=5 avg=8
+    67: compute region reached 1000 times
+        70: kernel launched 1000 times
+            grid: [16x32]  block: [64x16]
+             device time(us): total=2,076,713 max=2,088 min=2,056 avg=2,076
+            elapsed time(us): total=1,003,228 max=2,230 min=20 avg=1,003
+        70: reduction kernel launched 1000 times
+            grid: [1]  block: [256]
+             device time(us): total=8,005 max=13 min=8 avg=8
+            elapsed time(us): total=1,125,080 max=2,482 min=31 avg=1,125
+    82: compute region reached 1000 times
+        85: kernel launched 1000 times
+            grid: [8x4094]  block: [256]
+             device time(us): total=1,173,468 max=1,179 min=1,169 avg=1,173
+            elapsed time(us): total=1,202,103 max=1,228 min=1,194 avg=1,202

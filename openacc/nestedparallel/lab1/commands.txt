@@ -1,0 +1,7 @@
+make 						: Compile binaries in Makefile
+make clean                                	: Removes binaries generated from Makefile
+nvprof ./nestedpar_C				: Profile binary using nvprof
+export PGI_ACC_TIME=1				: Compiler generate timing report for each gpu kernel, along with kernel configuration details
+sbatch cpu.sh					: Submit CPU job script
+sbatch acc.sh					: Submit GPU job script
+

@@ -1,0 +1,64 @@
+==124889== NVPROF is profiling process 124889, command: ./nestedpar_C
+
+Accelerator Kernel Timing data
+/home/sms1990/nestedparallel/lab3/.solution/nestedparallel.c
+  main  NVIDIA  devicenum=0
+    time(us): 56
+    37: data region reached 1 time
+    39: data region reached 1 time
+    39: compute region reached 1 time
+        39: kernel launched 1 time
+            grid: [20000]  block: [128]
+            elapsed time(us): total=52 max=52 min=52 avg=52
+    49: data region reached 1 time
+    49: compute region reached 1 time
+        49: kernel launched 1 time
+            grid: [512]  block: [192]
+            elapsed time(us): total=32 max=32 min=32 avg=32
+    55: data region reached 1 time
+        55: data copyout transfers: 1
+             device time(us): total=56 max=56 min=56 avg=56
+PGI: CUDA Performance Tools Interface (CUPTI) could not be initialized.
+ Please disable all profiling tools (including NVPROF) before using PGI_ACC_TIME.
+Matrix Vector Multiplication of [20000,20000] X [20000]
+ Execution: 0.056455 sec 
+MFLOPS/sec : 7085.284151
+==124889== Profiling application: ./nestedpar_C
+==124889== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 63.54%  18.903ms         1  18.903ms  18.903ms  18.903ms  main_49_gpu
+ 36.41%  10.831ms         1  10.831ms  10.831ms  10.831ms  main_39_gpu
+  0.05%  15.104us         1  15.104us  15.104us  15.104us  [CUDA memcpy DtoH]
+
+==124889== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 78.85%  215.59ms         1  215.59ms  215.59ms  215.59ms  cuCtxCreate
+ 10.87%  29.709ms         3  9.9028ms  4.5740us  18.893ms  cuStreamSynchronize
+  9.21%  25.169ms         1  25.169ms  25.169ms  25.169ms  cuMemHostAlloc
+  0.49%  1.3294ms         4  332.35us  6.2300us  1.0035ms  cuMemAlloc
+  0.22%  595.45us        83  7.1740us     344ns  254.76us  cuDeviceGetAttribute
+  0.19%  528.17us         1  528.17us  528.17us  528.17us  cuMemAllocHost
+  0.05%  140.09us         1  140.09us  140.09us  140.09us  cuModuleLoadData
+  0.02%  60.973us         1  60.973us  60.973us  60.973us  cuDeviceTotalMem
+  0.02%  59.540us         1  59.540us  59.540us  59.540us  cuDeviceGetName
+  0.01%  39.944us         4  9.9860us  1.6960us  16.836us  cuEventSynchronize
+  0.01%  28.811us         2  14.405us  9.2970us  19.514us  cuLaunchKernel
+  0.01%  27.767us         2  13.883us  1.3320us  26.435us  cudaEventCreate
+  0.01%  26.055us         1  26.055us  26.055us  26.055us  cuMemcpyDtoHAsync
+  0.01%  25.054us         7  3.5790us  1.6700us  11.026us  cuEventRecord
+  0.01%  20.918us         1  20.918us  20.918us  20.918us  cuStreamCreate
+  0.01%  17.044us         2  8.5220us     744ns  16.300us  cudaEventDestroy
+  0.01%  16.377us         2  8.1880us  5.8120us  10.565us  cudaEventRecord
+  0.00%  10.205us         3  3.4010us  3.0520us  3.5940us  cuEventElapsedTime
+  0.00%  5.5230us         4  1.3800us     573ns  2.8490us  cuEventCreate
+  0.00%  4.3770us         2  2.1880us     897ns  3.4800us  cuDriverGetVersion
+  0.00%  4.3710us         3  1.4570us     740ns  2.8380us  cuDeviceGetCount
+  0.00%  3.7770us         1  3.7770us  3.7770us  3.7770us  cudaEventElapsedTime
+  0.00%  3.2040us         2  1.6020us     598ns  2.6060us  cuCtxGetCurrent
+  0.00%  3.1170us         2  1.5580us     429ns  2.6880us  cuModuleGetFunction
+  0.00%  2.8070us         1  2.8070us  2.8070us  2.8070us  cudaEventSynchronize
+  0.00%  2.3940us         1  2.3940us  2.3940us  2.3940us  cuInit
+  0.00%  1.8800us         3     626ns     566ns     671ns  cuDeviceGet
+  0.00%     811ns         1     811ns     811ns     811ns  cuCtxSetCurrent
+  0.00%     765ns         1     765ns     765ns     765ns  cuDeviceComputeCapability
+  0.00%     619ns         1     619ns     619ns     619ns  cuCtxAttach
