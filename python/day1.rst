@@ -2,7 +2,7 @@
 Day 1
 =========
 
-Objective: In this exercise, we will cover the basic on numbers, strings, list, conditional and looping, dictionary, sets, tuples, and string formatting
+**Objective**: In this exercise, we will cover the basic on numbers, strings, list, conditional and looping, dictionary, sets, tuples, and string formatting
 
 Setup
 -------
@@ -83,10 +83,10 @@ Tuple
 
 Reference: https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences 
 
-6. Declare a tuple coord as follows  ``coord = (4,5,6,7,8)`` and access the first element
-7. Declare a tuple ``empty=()`` and get its length
-8. Declare ``vector = ((0,1),(2,3))`` and access first element
-9. Loop over ``vector`` defined in task 7 and add +1 to X-coord and +2 to Y-coord
+1. Declare a tuple coord as follows  ``coord = (4,5,6,7,8)`` and access the first element
+2. Declare a tuple ``empty=()`` and get its length
+3. Declare ``vector = ((0,1),(2,3))`` and access first element
+4. Loop over ``vector`` defined in task 7 and add +1 to X-coord and +2 to Y-coord
 
 Sets
 -----
@@ -96,16 +96,16 @@ Reference:
 - https://docs.python.org/3/tutorial/datastructures.html#sets 
 - https://docs.python.org/3/library/stdtypes.html#set
 
-10. Declare set ``state = {"CT","MA","CT"}`` and print the set 
-11. Add ``NY`` ``PA``  ``NJ`` to set ``state`` 
-12. Declare two sets ``europe`` and ``asia`` as follows and find union of set.
+1. Declare set ``state = {"CT","MA","CT"}`` and print the set 
+2. Add ``NY`` ``PA``  ``NJ`` to set ``state`` 
+3. Declare two sets ``europe`` and ``asia`` as follows and find union of set.
 
 ::
 
   europe = {"England", "France"}
   asia = {"India", "China"}
 
-13. Let's get the intersection of two sets. Run the following ``print(set("abcd").intersection("ab"))``
+4. Let's get the intersection of two sets. Run the following ``print(set("abcd").intersection("ab"))``
 
 String Formatting
 ------------------
